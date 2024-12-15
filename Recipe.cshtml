@@ -1,0 +1,59 @@
+@page
+@model Bakery.Pages.RecipeModel
+@{
+    ViewData["Title"] = "Recipe";
+}
+
+<div class="container" style="background-color: #ffe6f2; padding: 20px; border-radius: 15px; margin-top: 20px;">
+    <h1 class="text-center" style="color: #ff66b2;">Manage Recipes</h1>
+
+    <!-- Recipe Form -->
+    <div class="card mb-4" style="border: none;">
+        <div class="card-body" style="background-color: #fff5f8; border-radius: 10px;">
+            <h2 class="card-title" style="color: #ff99cc;">Add or Edit Recipe</h2>
+            <form method="post" action="/Recipe">
+                <div class="form-group">
+                    <label for="recipeName" style="color: #ff66b2;">Recipe Name:</label>
+                    <input type="text" id="recipeName" name="recipeName" class="form-control" placeholder="Enter recipe name" style="border: 1px solid #ff99cc; border-radius: 5px;" required />
+                </div>
+                <div class="form-group">
+                    <label for="ingredients" style="color: #ff66b2;">Ingredients:</label>
+                    <textarea id="ingredients" name="ingredients" class="form-control" rows="3" placeholder="List ingredients" style="border: 1px solid #ff99cc; border-radius: 5px;" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="instructions" style="color: #ff66b2;">Instructions:</label>
+                    <textarea id="instructions" name="instructions" class="form-control" rows="5" placeholder="Write instructions" style="border: 1px solid #ff99cc; border-radius: 5px;" required></textarea>
+                </div>
+                <button type="submit" class="btn" style="background-color: #ff66b2; color: white; border-radius: 25px; padding: 10px 20px;">Save Recipe</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Recipe List -->
+    <div class="card" style="border: none;">
+        <div class="card-body" style="background-color: #fff5f8; border-radius: 10px;">
+            <h2 class="card-title" style="color: #ff99cc;">Recipe List</h2>
+            <table class="table table-striped">
+                <thead style="background-color: #ffe6f2;">
+                    <tr>
+                        <th style="color: #ff66b2;">Name</th>
+                        <th style="color: #ff66b2;">Ingredients</th>
+                        <th style="color: #ff66b2;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example Row -->
+                    <tr>
+                        <td>Chocolate Cake</td>
+                        <td>Flour, Sugar, Cocoa, Eggs</td>
+                        <td>
+                            <button class="btn btn-sm" style="background-color: #ff66b2; color: white; border-radius: 15px;">Edit</button>
+                            <button class="btn btn-sm" style="background-color: #ff66b2; color: white; border-radius: 15px;">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add dynamic rows here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
