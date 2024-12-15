@@ -1,0 +1,48 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center" style="background-color: #ffe6f2; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <h1 class="display-4" style="color: #ff66b2; font-family: 'Comic Sans MS', cursive, sans-serif;">
+        Welcome to Our Bakery!
+    </h1>
+    <p style="color: #ff99cc; font-size: 18px; font-family: 'Arial', sans-serif;">
+        Please log in to continue or register if you are new.
+    </p>
+
+    <form method="post" action="/Login" style="margin-top: 30px; width: 100%; max-width: 400px;">
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label for="email" style="color: #ff66b2;">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" style="padding: 10px; border-radius: 5px; border: 1px solid #ff99cc;" placeholder="Enter your email" required />
+        </div>
+
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label for="password" style="color: #ff66b2;">Password:</label>
+            <input type="password" id="password" name="password" class="form-control" style="padding: 10px; border-radius: 5px; border: 1px solid #ff99cc;" placeholder="Enter your password" required />
+        </div>
+
+        <button type="submit" class="btn btn-outline-pink" style="background-color: #ff66b2; color: white; padding: 10px 20px; border-radius: 25px; font-size: 16px; border: none; width: 100%;">
+            Login
+        </button>
+    </form>
+
+    <p style="margin-top: 20px; color: #ff99cc; font-size: 14px;">
+        Don’t have an account? <a href="/Register" style="color: #ff66b2; text-decoration: underline;">Register here</a>.
+    </p>
+</div>
+
+<style>
+    .btn:hover {
+        opacity: 0.8;
+        transform: scale(1.05);
+        transition: 0.3s;
+    }
+
+    .form-control:focus {
+        border-color: #ff66b2;
+        box-shadow: 0 0 5px rgba(255, 102, 178, 0.5);
+        outline: none;
+    }
+</style>
