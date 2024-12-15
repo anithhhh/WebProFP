@@ -1,0 +1,42 @@
+@page
+@model Bakery.Pages.RecipeListModel
+@{
+    ViewData["Title"] = "Recipe List";
+}
+
+<div class="container" style="background-color: #ffe6f2; padding: 20px; border-radius: 15px; margin-top: 20px;">
+    <h1 class="text-center" style="color: #ff66b2;">Recipe List</h1>
+
+    <!-- Recipe List -->
+    <div class="card" style="border: none;">
+        <div class="card-body" style="background-color: #fff5f8; border-radius: 10px;">
+            <h2 class="card-title" style="color: #ff99cc;">Recipes</h2>
+            @if (Model.Recipes.Any())
+            {
+                <table class="table table-striped">
+                    <thead style="background-color: #ffe6f2;">
+                        <tr>
+                            <th style="color: #ff66b2;">Name</th>
+                            <th style="color: #ff66b2;">Ingredients</th>
+                            <th style="color: #ff66b2;">Instructions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var recipe in Model.Recipes)
+                        {
+                            <tr>
+                                <td>@recipe.Name</td>
+                                <td>@recipe.Ingredients</td>
+                                <td>@recipe.Instructions</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p style="color: #ff66b2;">No recipes added yet. Go to "Add Recipe" to create one!</p>
+            }
+        </div>
+    </div>
+</div>
